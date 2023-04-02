@@ -4,7 +4,8 @@ export const Header = styled.header`
    
     width: 100%;
     box-shadow: 0 5px 10px -5px rgb(0 0 0 / 15%);
-    background-color: #fff;
+    /* background-color: #fff; */
+    background: #0b15349c;
     padding: 20px;
     position: fixed;
     z-index: 999;
@@ -26,7 +27,7 @@ export const Header = styled.header`
                 text-decoration: none;
                 font-weight: 700;
                 font-size: 18px;
-                color: #000;
+                color: #fff;
 
                 &:hover{
                     opacity: 0.5;

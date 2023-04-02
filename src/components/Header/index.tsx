@@ -1,5 +1,5 @@
 import * as C from './styles'
-import Logo from '../../assets/img/logo.png'
+import  Logo  from '../../assets/img/logo.svg'
 import { Link } from 'react-router-dom'
 
 export function Header(){
@@ -7,7 +7,7 @@ export function Header(){
         <C.Header>
             <div className="container">
               <Link to="/">
-                <img src={Logo} />
+                <img src={Logo}  />
               </Link>
 
                 <nav>

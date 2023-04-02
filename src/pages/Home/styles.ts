@@ -7,13 +7,25 @@ export const Container = styled.div`
 max-width: 1200px;
     margin: 6.5rem  auto;
 
-
+ 
 
    
     
 
-    .img{
+    .title{
         text-align: center;
+        
+        h1{
+          font-size: 6rem;
+          color: #FFF ;
+        }
+
+
+        @media (max-width: 500px) {
+          h1{
+            font-size: 4rem;
+          }
+        }
     }
 
     .items{
@@ -27,6 +39,7 @@ max-width: 1200px;
             width: 240px;
             box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
             border-radius: 4px;
+            
 
             img{
                 width: 100%;
@@ -43,6 +56,7 @@ max-width: 1200px;
                 display: flex;
                 justify-content: space-between;
                 gap: 10px;
+                background: white;
 
                 .details{
                     flex-direction: column;

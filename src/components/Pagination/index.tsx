@@ -22,7 +22,7 @@ export function Pagination({ onPrevious, onNext, prev, next }: Props) {
             <div className="load-more">
                 {
                     prev ? (
-                        <button onClick={handlePrevious}>Prev</button>
+                        <button onClick={handlePrevious} className='prev'>PREV</button>
                     ) : (
                         null
                     )
@@ -30,7 +30,7 @@ export function Pagination({ onPrevious, onNext, prev, next }: Props) {
 
                 {
                     next ? (
-                        <button onClick={handleNext}>NEXT</button>
+                        <button onClick={handleNext} className='next'>NEXT</button>
                     ) : (
                         null
                     )

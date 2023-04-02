@@ -4,9 +4,12 @@ export const Container = styled.div`
      max-width: 1200px;
      margin: 7rem  auto;
 
+     
+
      h1,h2{
         text-align: center;
         margin: 3rem;
+        color: #ffffff;
      }
      .items {
        display: flex;
@@ -35,6 +38,7 @@ export const Container = styled.div`
                 display: flex;
                 justify-content: space-between;
                 gap: 10px;
+                background: #FFF;
 
                 .details{
                     flex-direction: column;

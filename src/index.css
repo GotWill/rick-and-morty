@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 *{
   margin: 0;
@@ -8,11 +8,16 @@
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Metal Mania', cursive;
 }
 
 
 h1,h2,h3{
   font-weight: bold;
   color: #081F32;
+}
+
+.fo footer{
+  position: absolute;
+  bottom: 0;
 }

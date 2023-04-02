@@ -1,9 +1,7 @@
-import { Header } from "../../components/Header";
 import LogoText from '../../assets/img/logo-text.png';
 import * as C from './styles'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Footer } from "../../components/Footer";
 import { Form } from "../../components/Form";
 import { CharacterContext } from "../../contexts/character";
 import { typeCharacter } from "../../types/item";
@@ -11,36 +9,30 @@ import { Pagination } from "../../components/Pagination";
 export function Home() {
 
 
-   const { character, addFavorite, favorites, info } = useContext(CharacterContext)
-  
+   const { character, addFavorite, favorites, info, fetchCharacter } = useContext(CharacterContext)
 
-   function addItemFavorite(item: typeCharacter){
+   function addItemFavorite(item: typeCharacter) {
 
       const newList = [...favorites]
-      if(!newList.includes(item)){
+      if (!newList.includes(item)) {
          newList.push(item)
          addFavorite(newList)
       }
    }
-   
 
-   function onPrevious(){
-     
+   function onPrevious() {
+      fetchCharacter(info.prev)
    }
 
-   function onNext(){
-      
+   function onNext() {
+      fetchCharacter(info.next)
+
    }
-  
-
-
-  
    return (
       <div>
-         <Header />
          <C.Container>
-            <div className="img">
-               <img src={LogoText} alt="" />
+            <div className="title">
+              <h1>RICK AND MORTY</h1>
             </div>
 
             <Form />
@@ -61,8 +53,8 @@ export function Home() {
                            </div>
 
                            <div className="heart">
-                            
-                              <input type="checkbox" id="check" className="checkboxI" onClick={() => addItemFavorite(item)}/>
+
+                              <input type="checkbox" id="check" className="checkboxI" onClick={() => addItemFavorite(item)} />
                               <label htmlFor="checkbox">
                                  <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
                                     <g id="Group" fill="none" fillRule="evenodd" transform="translate(467 392)">
@@ -113,11 +105,8 @@ export function Home() {
                   )
                })}
             </div>
-
-            <Pagination next={info.next} prev={info.prev} onPrevious={onPrevious} onNext={onNext}/>
+            <Pagination next={info.next} prev={info.prev} onPrevious={onPrevious} onNext={onNext} />
          </C.Container>
-
-         <Footer />
       </div>
    )
 }

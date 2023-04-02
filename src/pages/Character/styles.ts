@@ -4,6 +4,10 @@ export const Container = styled.div`
     max-width: 900px;
     margin: 8rem  auto;
 
+    h2{
+        color: #FFF;
+    }
+
     .d-flex-header{
         display: flex;
         align-items: flex-start;
@@ -15,7 +19,11 @@ export const Container = styled.div`
             gap: 10px;
 
             a{
-                color: #000;
+                color: rgb(255, 255, 255);
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: none;
             }
         }
 
@@ -54,7 +62,7 @@ justify-content: space-between;
 align-items: baseline;
 
 h2{
-    color: #8E8E93;
+    color: #FFF;
     font-weight: 500;
 }
 
@@ -67,12 +75,12 @@ h2{
         border-bottom: 1px solid #6E798C;
 
         h3{
-            color: #081F32;
+            color: #FFF;
             font-weight: bold;
             margin-bottom: 5px;
         }
         span{
-            color: #6E798C;
+            color: #FFF;
             font-size: 14px;
             font-weight: 400;
         }

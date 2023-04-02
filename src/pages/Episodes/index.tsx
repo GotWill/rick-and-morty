@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import * as C from './styles'
 import imgEpisode from '../../assets/img/episode.png'
 import { MagnifyingGlass } from "phosphor-react";
@@ -11,7 +10,7 @@ import { Loading } from "../../components/Loading";
 
 
 export function Episodes() {
-    const {episodes, getEpisode} = useContext(CharacterContext)
+    const { episodes, getEpisode } = useContext(CharacterContext)
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -19,8 +18,7 @@ export function Episodes() {
         setTimeout(() => {
             setLoading(false);
         }, 300)
-    },[])
-
+    }, [])
 
     const schema = z.object({
         name: z.string(),
@@ -28,48 +26,44 @@ export function Episodes() {
 
     type SearchFormInputs = z.infer<typeof schema>
 
-    const {handleSubmit, register} = useForm<SearchFormInputs>({
+    const { handleSubmit, register } = useForm<SearchFormInputs>({
         resolver: zodResolver(schema)
     })
 
-    function submitForm(data: SearchFormInputs){
-        const {name} = data;
+    function submitForm(data: SearchFormInputs) {
+        const { name } = data;
         getEpisode(name)
     }
     return (
         <div>
-            <Header />
-
-               {
+            {
                 loading ? (
-                    <Loading/>
-                ): (
+                    <Loading />
+                ) : (
                     <C.Container>
-                    <div className="img">
-                      <img src={imgEpisode} alt="" />
-                    </div>
-    
-                    <form onSubmit={handleSubmit(submitForm)}>
-                        <MagnifyingGlass size={20} />
-                        <input {...register('name')} type="text" placeholder="Filter by name" required/>
-                    </form>
-    
-                    <div className="items">
-                        {episodes.map((episode) => {
-                            return (
-                                <div className="item" key={episode.id}>
-                                    <h2>{episode.name}</h2>
-                                    <span>{episode.air_date}</span>
-                                    <span className="bold">{episode.episode}</span>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </C.Container>
-                )
-               } 
+                        <div className="img">
+                            <img src={imgEpisode} alt="" />
+                        </div>
 
-           
+                        <form onSubmit={handleSubmit(submitForm)}>
+                            <MagnifyingGlass size={20} />
+                            <input {...register('name')} type="text" placeholder="Filter by name" required />
+                        </form>
+
+                        <div className="items">
+                            {episodes.map((episode) => {
+                                return (
+                                    <div className="item" key={episode.id}>
+                                        <h2>{episode.name}</h2>
+                                        <span>{episode.air_date}</span>
+                                        <span className="bold">{episode.episode}</span>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </C.Container>
+                )
+            }
         </div>
     )
 }
