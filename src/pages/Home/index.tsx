@@ -1,4 +1,3 @@
-import LogoText from '../../assets/img/logo-text.png';
 import * as C from './styles'
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
@@ -40,7 +39,7 @@ export function Home() {
                {character.map((item) => {
                   return (
                      <div className="item" key={item.id}>
-                        <Link to={`/character/${item.id}`}>
+                        <Link to={`/character/${item.id}`}>     
                            <img src={item.image} alt={item.name} />
                         </Link>
 

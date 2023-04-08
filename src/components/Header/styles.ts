@@ -11,6 +11,10 @@ export const Header = styled.header`
     z-index: 999;
     top: 0;
 
+    img{
+        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(83deg) brightness(110%) contrast(101%);
+    }
+
     .container{
         max-width: 1200px;
         margin: 0px auto;

@@ -7,6 +7,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from "react-hook-form"
 import { Loading } from "../../components/Loading";
+import { Link } from 'react-router-dom';
 
 
 export function Episodes() {
@@ -54,7 +55,11 @@ export function Episodes() {
                             {episodes.map((episode) => {
                                 return (
                                     <div className="item" key={episode.id}>
-                                        <h2>{episode.name}</h2>
+                                        
+                                            <Link to={`/episode/${episode.id}`}>
+                                             <h2>{episode.name}</h2>  
+                                            </Link>
+                                        
                                         <span>{episode.air_date}</span>
                                         <span className="bold">{episode.episode}</span>
                                     </div>

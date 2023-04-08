@@ -18,6 +18,7 @@ max-width: 1200px;
         h1{
           font-size: 6rem;
           color: #FFF ;
+          text-shadow: 4px 4px 2px rgb(0 0 0);
         }
 
 

@@ -8,6 +8,45 @@ export const Container = styled.div`
         text-align: center;
      }
 
+     form{
+
+margin-top: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+
+input{
+width: 500px;
+height: 56px;
+border: 1px solid #E5E5E5;
+border-radius: 10px;
+outline: none;
+padding: 20px 40px;
+color: rgba(0, 0, 0, 0.5);
+}
+
+svg{
+    position: absolute;
+    margin-left: -450px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px){
+    input{
+        width: 90%;
+    }
+
+    svg{
+        margin-left: -308px;
+    }
+}
+
+}
+
+a{
+    text-decoration: none;
+}
+
      .items{
         display: flex;
         justify-content: center;
