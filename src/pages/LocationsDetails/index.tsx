@@ -1,13 +1,18 @@
 import * as C from './styles'
 import { api } from '../../api'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { typeLocation, typeCharacter } from '../../types/item'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft } from 'phosphor-react'
 import axios from 'axios'
 import { Loading } from '../../components/Loading'
+import {Card} from '../../components/Card'
+import { CharacterContext } from '../../contexts/character'
 
 export function LocationsDetails() {
+
+    const {addFavorite, favorites } = useContext(CharacterContext)
+
 
     const [location, setLocations] = useState({} as typeLocation)
     const [residents, setResidents] = useState<typeCharacter[]>([])
@@ -15,6 +20,15 @@ export function LocationsDetails() {
     const cards: typeCharacter[] = []
     let count = 0;
     const { id } = useParams()
+
+    function addItemFavorite(item: typeCharacter) {
+
+        const newList = [...favorites]
+        if (!newList.includes(item)) {
+           newList.push(item)
+           addFavorite(newList)
+        }
+     }
 
     function getLocations() {
         Promise.all([
@@ -92,21 +106,9 @@ export function LocationsDetails() {
                                     <div className="items">
                                         {residents.map((resident) => {
                                             return (
-                                                <div className="item" key={`${resident.id}${count++}`}>
+                                               
 
-                                                    <Link to={`/character/${resident.id}`}>
-                                                      <img src={resident.image} alt={resident.name} />
-                                                    </Link>
-
-                                                    <div className="info">
-                                                        <div className="details">
-                                                            <h2>{resident.name}</h2>
-                                                            <p>{resident.species}</p>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
+                                                <Card item={resident} key={`${resident.id}${count++}`} favoriteItem={addItemFavorite}/>
                                             )
                                         })}
                                     </div>

@@ -9,11 +9,15 @@ export const Container = styled.div`
         margin-top: 1rem;
 
         input, select{
-            width: 250px;
+            width: 375px;
             border: 1px solid #cecece;
             border-radius: 10px;
             outline: none;
             padding: 16px 20px;
+
+            @media (max-width: 1280px) {
+                width: 280px;
+            }
         }
 
         button {
@@ -25,6 +29,11 @@ export const Container = styled.div`
             border-radius: 15px;
             padding: 16px 10px;
             cursor: pointer;
+            font-size: 20px;
+
+            @media (max-width: 1280px) {
+                width: 280px;
+            }
 
             &:hover{
                 background: #061024;

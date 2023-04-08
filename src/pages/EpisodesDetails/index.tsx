@@ -1,11 +1,13 @@
 import * as C from './styles'
 import { api } from '../../api'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { typeEpisode, typeCharacter } from '../../types/item'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft } from 'phosphor-react'
 import axios from 'axios'
 import { Loading } from '../../components/Loading'
+import { Card } from '../../components/Card'
+import { CharacterContext } from '../../contexts/character'
 
 export function EpisodesDetails() {
 
@@ -17,9 +19,17 @@ export function EpisodesDetails() {
 
 
     const { id } = useParams()
+    const {addFavorite, favorites } = useContext(CharacterContext)
 
 
+    function addItemFavorite(item: typeCharacter) {
 
+        const newList = [...favorites]
+        if (!newList.includes(item)) {
+           newList.push(item)
+           addFavorite(newList)
+        }
+     }
 
 
     function getEpisodes() {
@@ -106,20 +116,7 @@ export function EpisodesDetails() {
                 <div className="items">
                 {character.map((character) => {
                     return (
-                        <div className="item" key={`${character.id}${count++}`}>
-                            <Link to={`/character/${character.id}`}>
-                                <img src={character.image} alt={character.name} />
-                            </Link>
-    
-                            <div className="info">
-                                <div className="details">
-                                    <Link to={`/character/${character.id}`}>{character.name}</Link>
-                                    <p>{character.species}</p>
-                                </div>
-    
-    
-                            </div>
-                        </div>
+                       <Card item={character} favoriteItem={addItemFavorite} key={`${character.id}${count++}`}/>
                     )
                 })}
                 </div>

@@ -66,48 +66,5 @@ export const Container = styled.div`
         gap: 30px;
         flex-wrap: wrap;
         margin: 2rem;
-
-        
-        .item{
-            width: 240px;
-            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
-            border-radius: 4px;
-            background: white;
-
-            
-
-            img{
-                width: 100%;
-
-                &:hover{
-                    transform: scale(1.1);
-                    animation-duration: 4s;
-                     animation-delay: 2s;
-                }
-            }
-
-            .info{
-                padding: 0px 10px;
-
-                p{
-                    color: #000;
-                }
-
-                .details{
-                    flex-direction: column;
-
-                    a{
-                        text-decoration: none;
-                        color: #000;
-                    }
-                }
-                h2{
-                    font-weight: bold;
-                    font-size: 20px;
-                    margin-bottom: 5px;
-                  
-                }
-            }
-        }
      }
 `;

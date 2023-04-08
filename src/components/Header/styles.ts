@@ -30,8 +30,12 @@ export const Header = styled.header`
             a{
                 text-decoration: none;
                 font-weight: 700;
-                font-size: 18px;
+                font-size: 23px;
                 color: #fff;
+
+                @media (max-width: 400px){
+                    font-size: 20px;
+                }
 
                 &:hover{
                     opacity: 0.5;

@@ -4,7 +4,7 @@ export const Container = styled.div`
     max-width: 900px;
     margin: 8rem  auto;
 
-    h2{
+    h2,h1{
         color: #FFF;
     }
 
@@ -24,6 +24,7 @@ export const Container = styled.div`
                 align-items: center;
                 gap: 15px;
                 text-decoration: none;
+                font-size: 20px;
             }
         }
 
@@ -83,6 +84,7 @@ h2{
             color: #FFF;
             font-size: 14px;
             font-weight: 400;
+            font-size: 17px;
         }
     }
 }

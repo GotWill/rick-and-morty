@@ -40,7 +40,7 @@ export function Character() {
                     </div>
                     <div className="img">
                         <img src={character.image} alt={character.name} />
-                        <h2>{character.name}</h2>
+                        <h1>{character.name}</h1>
                     </div>
                     <div></div>
                 </div>

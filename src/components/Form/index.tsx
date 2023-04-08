@@ -41,7 +41,7 @@ export function Form() {
                 <option value="genderless">genderless</option>
                 <option value="unknown">unknown</option>
             </select>
-            <button type="submit">Buscar</button>
+            <button type="submit">search</button>
 
         </form>
        </Container>
